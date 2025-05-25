@@ -1,17 +1,16 @@
 import java.math.BigDecimal;
 
-public class Televisori extends Prodotto {
+public class Televisore extends Prodotto {
 
     // Attributi
     protected int dimensioni;
-    protected boolean IssmartTV;
+    protected boolean IssmartTV = false;
 
     // 1° Costruttore
-    public Televisori(int codice, String nome, String marca, BigDecimal prezzo, BigDecimal iva, int dimensioni, String risoluzione) {
+    public Televisore(int codice, String nome, String marca, BigDecimal prezzo, BigDecimal iva, int dimensioni, Boolean issmartTV) {
         super(codice, nome, marca, prezzo, iva);
         this.dimensioni = dimensioni;
-        this.IssmartTV = false; // Default value, can be set later
-
+        this.IssmartTV = issmartTV;
     }
 
     // Getters e Setters
@@ -28,7 +27,7 @@ public class Televisori extends Prodotto {
     }
 
     public void setIssmartTV(boolean issmartTV) {
-        IssmartTV = issmartTV;
+        this.IssmartTV = issmartTV;
     }
 
 }

@@ -8,19 +8,18 @@ public class Smartphone extends Prodotto {
     protected BigDecimal codiceIMEI;
 
     // 1° Costruttore
-    public Smartphone(int codice, String nome, String marca, BigDecimal prezzo, BigDecimal iva, int memoriaRam) {
+    public Smartphone(int codice, String nome, String marca, BigDecimal prezzo, BigDecimal iva) {
         super(codice, nome, marca, prezzo, iva);
         this.memoriaRam = generatoreMemoriaRam();
         this.codiceIMEI = generatoreCodiceIMEI();
     }
 
     // metodi privati
-    private String generatoreMemoriaRam() {
-    String.format("%d", "GB");
-    int[] arrayMemoria = new int[] {2, 3, 4, 8, 12, 16};
-    Random generator = new Random();
-    int randomIndex = generator.nextInt(arrayMemoria.length);
-    return arrayMemoria[randomIndex] + " GB";
+    protected static String generatoreMemoriaRam() {
+        int[] arrayMemoria = new int[] {2, 3, 4, 8, 12, 16};
+        Random generator = new Random();
+        int randomIndex = generator.nextInt(arrayMemoria.length);
+        return arrayMemoria[randomIndex] + " GB";
     }
 
     private BigDecimal generatoreCodiceIMEI() {

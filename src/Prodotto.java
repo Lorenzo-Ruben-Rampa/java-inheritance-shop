@@ -14,7 +14,7 @@ public class Prodotto {
         this.codice = generatoreCodice();
         this.nome = nome;
         this.marca = marca;
-        this.prezzo = generatorePrezzoFinale();
+        this.prezzo = prezzo;
         this.iva = iva.setScale(2, RoundingMode.HALF_UP);
     }
 
@@ -25,16 +25,16 @@ public class Prodotto {
 
     // Metodi Privati
 
-    private int generatoreCodice() {
+    protected static int generatoreCodice() {
         // Genera un codice univoco per il prodotto
         return new Random().nextInt(9999);
     }
     
-        //metodo per generare prezzo base casuale
-    private void generatorePrezzoBase() {
-        Random rand = new Random();
-        this.prezzo = new BigDecimal(rand.nextInt(100) + 1).setScale(2, RoundingMode.HALF_UP);
-    }
+    //     //metodo per generare prezzo base casuale
+    // protected void generatorePrezzoBase() {
+    //     Random rand = new Random();
+    //     this.prezzo = new BigDecimal(rand.nextInt(100) + 1).setScale(2, RoundingMode.HALF_UP);
+    // }
 
     // Metodi Pubblici
 
