@@ -81,4 +81,11 @@ public class Prodotto {
     public void setIva(BigDecimal iva) {
         this.iva = iva;
     }
+    @Override
+    public String toString() {
+	if(nome != null) {
+		return "\n" +"Articolo: " + codice + " - " + nome + "\nPrezzo: " + generatorePrezzoFinale() + " euro";
+	}
+	return null;
+}
 }

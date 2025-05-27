@@ -14,11 +14,11 @@ public class Televisore extends Prodotto {
     }
 
     // Getters e Setters
-    public int getdimensioni() {
+    public int getDimensioni() {
         return dimensioni;
     }
 
-    public void setdimensioni(int dimensioni) {
+    public void setDimensioni(int dimensioni) {
         this.dimensioni = dimensioni;
     }
 
@@ -29,5 +29,9 @@ public class Televisore extends Prodotto {
     public void setIssmartTV(boolean issmartTV) {
         this.IssmartTV = issmartTV;
     }
-
+    
+    @Override
+    public String toString() {
+        return super.toString() + "\nDimensioni: " + getDimensioni() + " pollici\nSmart TV: " + (isIssmartTV() ? "Disponibile" : "Non disponibile");
+    }
 }

@@ -51,4 +51,9 @@ public class Smartphone extends Prodotto {
     public void setCodiceIMEI(BigDecimal codiceIMEI) {
         this.codiceIMEI = codiceIMEI;
     }
+
+    @Override
+    public String toString() {
+	return super.toString() + "\nCodice IMEI: " + getCodiceIMEI() + "\nGiga: " + getMemoriaRam();
+    }
 }
